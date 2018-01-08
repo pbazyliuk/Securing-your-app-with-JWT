@@ -17,6 +17,10 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.profile = jwtDecode(this.auth.getToken());
+    this.payload = jwtDecode(this.auth.getToken());
+    console.log(this.profile);
+    console.log(this.payload);
     // decode the JWT payload to get access
     // to the user's profile
   }
