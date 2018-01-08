@@ -12,9 +12,9 @@ export const ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   // guard the /instructor route with the canActivate hook
-  { path: 'instructor', component: InstructorComponent },
+  { path: 'instructor', component: InstructorComponent, canActivate: [AuthGuard] },
   // guard the /instructor/new route with the canActivate hook
   // check that the user is authenticated and is an admin
-  { path: 'instructor/new', component: NewInstructorComponent },
+  { path: 'instructor/new', component: NewInstructorComponent, canActivate: [RoleGuard] },
   { path: 'profile', component: ProfileComponent }
 ];

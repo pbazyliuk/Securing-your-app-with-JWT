@@ -34,8 +34,8 @@ import { RoleGuard } from './auth/roleguard.service';
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES),
-    TabsModule,
-    AlertModule
+    TabsModule.forRoot(),
+    AlertModule.forRoot()
   ],
   providers: [
     AuthService,
