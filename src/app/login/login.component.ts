@@ -14,6 +14,7 @@ export class LoginComponent {
   constructor(private auth: AuthService) { }
 
   onLoginSubmit(credentials) {
+   
     this.auth.login(credentials)
       .map(res => res.json())
       .subscribe(
@@ -23,6 +24,7 @@ export class LoginComponent {
   }
 
   onSignupSubmit(credentials) {
+    credentials.admin = true;
     this.auth.signup(credentials)
       .map(res => res.json())
       .subscribe(

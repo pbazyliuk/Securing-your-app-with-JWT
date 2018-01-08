@@ -22,6 +22,13 @@ export class InstructorComponent implements OnInit {
   }
 
   private getInstructors() {
+    this.instructorService.getInstructors()
+      .map(res => res.json())
+      .subscribe(
+        response => this.instructors = response,
+        error => this.errorMessage = error.json().message
+      )
+      
     // use the InstructorService to GET a listing
     // of instructors to display in the view
   }

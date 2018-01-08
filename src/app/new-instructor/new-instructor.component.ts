@@ -13,12 +13,23 @@ import 'rxjs/add/operator/map';
 export class NewInstructorComponent implements OnInit {
 
   instructor: Instructor;
+  errorMessage: string = '';
 
   constructor(private router: Router, private location: Location, private instructorService: InstructorService) {}
 
   ngOnInit() {}
 
   addInstructor(data) {
+    this.instructorService.addInstructor(data)
+    .map(res => res.json())
+    .subscribe(
+      response => {
+        this.instructor = response;
+        return this.goBack();
+      },
+      error => this.errorMessage = error.json().message
+    )
+    
     // call the InstructorService to add a new
     // instructor and redirect to the /instructor
     // route if successful

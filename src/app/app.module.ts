@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
-import { TabsModule, AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { TabsModule, AlertModule } from 'ngx-bootstrap';
 
 import { provideAuth } from 'angular2-jwt';
 
@@ -32,8 +32,8 @@ import { InstructorService } from './instructor/instructor.service';
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES),
-    TabsModule,
-    AlertModule
+    TabsModule.forRoot(),
+    AlertModule.forRoot()
   ],
   providers: [
     AuthService,
