@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, Http, RequestOptions } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
-import { TabsModule, AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { TabsModule, AlertModule } from 'ngx-bootstrap';
 
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 
